@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shoesapp/constant/controller.dart';
+import 'package:shoesapp/constant/firebase.dart';
 import 'package:shoesapp/views/home/widget/ItemContentInDrawer.dart';
 
 class SideBarNavigationBar extends StatelessWidget {
@@ -75,12 +77,17 @@ class SideBarNavigationBar extends StatelessWidget {
                   size: 25,
                 ),
               ),
-              ItemContentInDrawer(
-                listItemName: 'Log out',
-                icon: Icon(
-                  Icons.login,
-                  color: Colors.white70,
-                  size: 25,
+              GestureDetector(
+                onTap: (){
+                  authController.signOut();
+                },
+                child: ItemContentInDrawer(
+                  listItemName: 'Log out',
+                  icon: Icon(
+                    Icons.login,
+                    color: Colors.white70,
+                    size: 25,
+                  ),
                 ),
               ),
             ],
